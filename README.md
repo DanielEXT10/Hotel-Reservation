@@ -85,60 +85,33 @@ This project follows core MLOps practices:
 
 ## 🗂️ Project Structure
 
-\`\`\`bash
+```
 hotel-reservation-cancellation/
-│
-├── artifacts/               # Output directories for processed data and artifacts
+├── artifacts/                  # Output directories for processed data and artifacts
 │   ├── processed/
 │   └── raw/
-│
-├── config/                  # Configuration files (YAML, JSON, etc.)
-│
-├── logs/                    # General logging directory
-│
-├── notebook/                # Jupyter Notebooks for EDA and experimentation
-│
-├── src/                     # Source code for the ML pipeline
+├── config/                     # Configuration files (YAML, JSON, etc.)
+├── logs/                       # General logging directory
+├── notebook/                   # Jupyter Notebooks for EDA and experimentation
+├── src/                        # Source code for the ML pipeline
 │   ├── __pycache__/
-│   ├── artifacts/           # Folder to handle output artifacts in scripts
-│   ├── logs/                # Script-specific logging
+│   ├── artifacts/              # Output artifacts (e.g., trained models)
+│   ├── logs/                   # Script-specific logging
 │   ├── __init__.py
-│   ├── custom_exception.py  # Custom error handling
-│   ├── data_ingestion.py    # Raw data ingestion pipeline
-│   ├── data_preprocessing.py# Data cleaning and feature engineering
-│   ├── logger.py            # Logging utility
-│   └── model_training.py    # Model training and evaluation script
-│
-├── static/                  # Static assets (if deploying with web UI)
-│
-├── templates/               # HTML templates for web UI
-│
-├── utils/                   # Utility functions and shared helpers
-│
-├── venv/                    # Virtual environment directory
-│
+│   ├── custom_exception.py     # Custom error handling
+│   ├── data_ingestion.py       # Raw data ingestion pipeline
+│   ├── data_preprocessing.py   # Data cleaning and feature engineering
+│   ├── logger.py               # Logging utility
+│   └── model_training.py       # Model training and evaluation script
+├── static/                     # Static assets (if deploying with web UI)
+├── templates/                  # HTML templates for web UI
+├── utils/                      # Utility functions and shared helpers
+├── venv/                       # Virtual environment directory
 ├── .gitignore
-├── requirements.txt         # Python dependencies
-├── setup.py                 # Setup script for packaging
-\`\`\`
-
+├── requirements.txt            # Python dependencies
+└── setup.py                    # Setup script for packaging
+```
 ---
-
-## 🛠️ Installation & Usage
-
-1. **Clone the repository**
-   \`\`\`bash
-   git clone https://github.com/your-username/hotel-cancellation-prediction.git
-   cd hotel-cancellation-prediction
-   \`\`\`
-
-2. **Create a virtual environment & install dependencies**
-   \`\`\`bash
-   python -m venv env
-   source env/bin/activate   # On Windows: env\Scripts\activate
-   pip install -e .
-   \`\`\`
-
 
 
 ## 🚀 Future Improvements
@@ -165,4 +138,4 @@ hotel-reservation-cancellation/
 
 _**Author**: Daniel Alfonso Garcia Perez  
 **Role**: Data Analyst / Data Scientist  
-**Contact**: dgarciap@outlook.com - https://www.linkedin.com/in/danielext10/
+**Contact**: dgarciap1196@outlook.com - https://www.linkedin.com/in/danielext10/

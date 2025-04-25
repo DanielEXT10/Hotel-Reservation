@@ -1,0 +1,50 @@
+2025-04-14 22:00:31,085 - INFO - Succesfully read the YAML file 
+2025-04-14 22:01:32,691 - INFO - Succesfully read the YAML file 
+2025-04-14 22:01:32,691 - INFO - Data ingestion started with podai_bucket and file is Hotel_Reservations.csv 
+2025-04-14 22:01:32,691 - INFO - starting data ingestion process 
+2025-04-14 22:01:32,698 - WARNING - Compute Engine Metadata server unavailable on attempt 1 of 3. Reason: [WinError 10051] A socket operation was attempted to an unreachable network 
+2025-04-14 22:01:33,666 - WARNING - Compute Engine Metadata server unavailable on attempt 2 of 3. Reason: [WinError 10051] A socket operation was attempted to an unreachable network 
+2025-04-14 22:01:35,534 - WARNING - Compute Engine Metadata server unavailable on attempt 3 of 3. Reason: [WinError 10051] A socket operation was attempted to an unreachable network 
+2025-04-14 22:01:35,534 - WARNING - Authentication failed using Compute Engine authentication due to unavailable metadata server. 
+2025-04-14 22:01:35,534 - ERROR - Error while downloading csv file 
+2025-04-14 22:01:35,534 - INFO - Data Ingestion completed 
+2025-04-14 22:05:47,359 - INFO - Succesfully read the YAML file 
+2025-04-14 22:05:47,359 - INFO - Data ingestion started with podai_bucket and file is Hotel_Reservations.csv 
+2025-04-14 22:05:47,359 - INFO - starting data ingestion process 
+2025-04-14 22:05:49,073 - WARNING - No project ID could be determined. Consider running `gcloud config set project` or setting the GOOGLE_CLOUD_PROJECT environment variable 
+2025-04-14 22:05:49,073 - ERROR - Error while downloading csv file 
+2025-04-14 22:05:49,073 - INFO - Data Ingestion completed 
+2025-04-14 22:15:03,762 - INFO - Succesfully read the YAML file 
+2025-04-14 22:15:03,763 - INFO - Data ingestion started with podai_bucket and file is Hotel_Reservations.csv 
+2025-04-14 22:15:03,763 - INFO - starting data ingestion process 
+2025-04-14 22:17:14,239 - INFO - CSV file was successfully donwloades to artifacts/raw\raw.csv 
+2025-04-14 22:17:14,240 - INFO - Data ingestion completed succesfully 
+2025-04-14 22:17:14,240 - INFO - Data Ingestion completed 
+2025-04-14 22:21:46,601 - INFO - Succesfully read the YAML file 
+2025-04-14 22:21:46,601 - INFO - Data ingestion started with podai_bucket and file is Hotel_Reservations.csv 
+2025-04-14 22:21:46,601 - INFO - starting data ingestion process 
+2025-04-14 22:22:39,176 - INFO - CSV file was successfully donwloades to artifacts/raw\raw.csv 
+2025-04-14 22:22:39,177 - INFO - Data ingestion completed succesfully 
+2025-04-14 22:22:39,177 - INFO - Data Ingestion completed 
+2025-04-14 22:23:07,446 - INFO - Succesfully read the YAML file 
+2025-04-14 22:23:07,446 - INFO - Data ingestion started with podai_bucket and file is Hotel_Reservations.csv 
+2025-04-14 22:23:07,446 - INFO - starting data ingestion process 
+2025-04-14 22:24:36,105 - INFO - CSV file was successfully donwloades to artifacts/raw\raw.csv 
+2025-04-14 22:24:36,106 - INFO - Data ingestion completed succesfully 
+2025-04-14 22:24:36,106 - INFO - Data Ingestion completed 
+2025-04-14 22:29:33,010 - INFO - Succesfully read the YAML file 
+2025-04-14 22:29:33,010 - INFO - Data ingestion started with podai_bucket and file is Hotel_Reservations.csv 
+2025-04-14 22:29:33,010 - INFO - starting data ingestion process 
+2025-04-14 22:30:13,369 - INFO - CSV file was successfully donwloaded to artifacts/raw\raw.csv 
+2025-04-14 22:30:13,369 - INFO - Starting the splitting process 
+2025-04-14 22:30:13,456 - ERROR - Error while splitting data 
+2025-04-14 22:30:13,456 - INFO - Data Ingestion completed 
+2025-04-14 22:31:10,701 - INFO - Succesfully read the YAML file 
+2025-04-14 22:31:10,701 - INFO - Data ingestion started with podai_bucket and file is Hotel_Reservations.csv 
+2025-04-14 22:31:10,701 - INFO - starting data ingestion process 
+2025-04-14 22:32:16,206 - INFO - CSV file was successfully donwloaded to artifacts/raw\raw.csv 
+2025-04-14 22:32:16,206 - INFO - Starting the splitting process 
+2025-04-14 22:32:16,465 - INFO - Train data saved to artifacts/raw\train.csv 
+2025-04-14 22:32:16,465 - INFO - Test data saved to artifacts/raw\test.csv 
+2025-04-14 22:32:16,469 - INFO - Data ingestion completed succesfully 
+2025-04-14 22:32:16,469 - INFO - Data Ingestion completed 

@@ -1,0 +1,83 @@
+2025-04-24 19:25:45,044 - ERROR - Error wile reading YAML file 
+2025-04-24 19:26:12,898 - ERROR - Error wile reading YAML file 
+2025-04-24 19:30:01,547 - ERROR - Error wile reading YAML file 
+2025-04-24 19:33:43,039 - ERROR - Error wile reading YAML file 
+2025-04-24 19:34:39,909 - ERROR - Error wile reading YAML file 
+2025-04-24 19:37:29,215 - INFO - Succesfully read the YAML file 
+2025-04-24 19:37:29,217 - INFO - Loading data from RAW directory 
+2025-04-24 19:37:29,217 - INFO - Logging data 
+2025-04-24 19:37:29,221 - ERROR - Error loading the data 
+2025-04-24 19:37:29,221 - ERROR - Error during pre-processing pipeline  Error in c:\users\dgarc\documents\projects\hotel-reservation\utils\common_functions.py, line 28: Failed to load data 
+2025-04-24 19:40:38,016 - INFO - Succesfully read the YAML file 
+2025-04-24 19:40:38,016 - INFO - Loading data from RAW directory 
+2025-04-24 19:40:38,016 - INFO - Logging data 
+2025-04-24 19:40:38,098 - INFO - Logging data 
+2025-04-24 19:40:38,129 - INFO - Starting preprocessing data 
+2025-04-24 19:40:38,129 - INFO - Dropping the columns 
+2025-04-24 19:40:38,161 - INFO - Applying Label Encoding 
+2025-04-24 19:40:38,192 - INFO - Label Mappings are: 
+2025-04-24 19:40:38,192 - INFO - type_of_meal_plan : {'Meal Plan 1': np.int64(0), 'Meal Plan 2': np.int64(1), 'Meal Plan 3': np.int64(2), 'Not Selected': np.int64(3)} 
+2025-04-24 19:40:38,192 - INFO - required_car_parking_space : {np.int64(0): np.int64(0), np.int64(1): np.int64(1)} 
+2025-04-24 19:40:38,192 - INFO - room_type_reserved : {'Room_Type 1': np.int64(0), 'Room_Type 2': np.int64(1), 'Room_Type 3': np.int64(2), 'Room_Type 4': np.int64(3), 'Room_Type 5': np.int64(4), 'Room_Type 6': np.int64(5), 'Room_Type 7': np.int64(6)} 
+2025-04-24 19:40:38,192 - INFO - market_segment_type : {'Aviation': np.int64(0), 'Complementary': np.int64(1), 'Corporate': np.int64(2), 'Offline': np.int64(3), 'Online': np.int64(4)} 
+2025-04-24 19:40:38,192 - INFO - booking_status : {'Canceled': np.int64(0), 'Not_Canceled': np.int64(1)} 
+2025-04-24 19:40:38,192 - INFO - repeated_guest : {np.int64(0): np.int64(0), np.int64(1): np.int64(1)} 
+2025-04-24 19:40:38,192 - INFO - Skewness Handling 
+2025-04-24 19:40:38,208 - INFO - Starting preprocessing data 
+2025-04-24 19:40:38,208 - INFO - Dropping the columns 
+2025-04-24 19:40:38,223 - INFO - Applying Label Encoding 
+2025-04-24 19:40:38,239 - INFO - Label Mappings are: 
+2025-04-24 19:40:38,239 - INFO - type_of_meal_plan : {'Meal Plan 1': np.int64(0), 'Meal Plan 2': np.int64(1), 'Meal Plan 3': np.int64(2), 'Not Selected': np.int64(3)} 
+2025-04-24 19:40:38,239 - INFO - required_car_parking_space : {np.int64(0): np.int64(0), np.int64(1): np.int64(1)} 
+2025-04-24 19:40:38,239 - INFO - room_type_reserved : {'Room_Type 1': np.int64(0), 'Room_Type 2': np.int64(1), 'Room_Type 3': np.int64(2), 'Room_Type 4': np.int64(3), 'Room_Type 5': np.int64(4), 'Room_Type 6': np.int64(5), 'Room_Type 7': np.int64(6)} 
+2025-04-24 19:40:38,239 - INFO - market_segment_type : {'Aviation': np.int64(0), 'Complementary': np.int64(1), 'Corporate': np.int64(2), 'Offline': np.int64(3), 'Online': np.int64(4)} 
+2025-04-24 19:40:38,239 - INFO - booking_status : {'Canceled': np.int64(0), 'Not_Canceled': np.int64(1)} 
+2025-04-24 19:40:38,239 - INFO - repeated_guest : {np.int64(0): np.int64(0), np.int64(1): np.int64(1)} 
+2025-04-24 19:40:38,239 - INFO - Skewness Handling 
+2025-04-24 19:40:38,254 - INFO - Handling imbalanced data 
+2025-04-24 19:40:38,606 - INFO - Data balanced succesfully 
+2025-04-24 19:40:38,608 - INFO - Handling imbalanced data 
+2025-04-24 19:40:38,632 - INFO - Data balanced succesfully 
+2025-04-24 19:40:38,632 - INFO - Starting Feature Selection 
+2025-04-24 19:40:38,632 - ERROR - Error on Feature Selection process 'NoneType' object has no attribute 'drop' 
+2025-04-24 19:40:38,632 - ERROR - Error during pre-processing pipeline  Error in C:\Users\dgarc\Documents\Projects\Hotel-Reservation\src\data_preprocessing.py, line 81: Error while trying to select important features 
+2025-04-24 20:54:34,640 - INFO - Succesfully read the YAML file 
+2025-04-24 20:54:34,640 - INFO - Loading data from RAW directory 
+2025-04-24 20:54:34,640 - INFO - Logging data 
+2025-04-24 20:54:34,703 - INFO - Logging data 
+2025-04-24 20:54:34,719 - INFO - Starting preprocessing data 
+2025-04-24 20:54:34,719 - INFO - Dropping the columns 
+2025-04-24 20:54:34,734 - INFO - Applying Label Encoding 
+2025-04-24 20:54:34,759 - INFO - Label Mappings are: 
+2025-04-24 20:54:34,759 - INFO - type_of_meal_plan : {'Meal Plan 1': np.int64(0), 'Meal Plan 2': np.int64(1), 'Meal Plan 3': np.int64(2), 'Not Selected': np.int64(3)} 
+2025-04-24 20:54:34,759 - INFO - required_car_parking_space : {np.int64(0): np.int64(0), np.int64(1): np.int64(1)} 
+2025-04-24 20:54:34,759 - INFO - room_type_reserved : {'Room_Type 1': np.int64(0), 'Room_Type 2': np.int64(1), 'Room_Type 3': np.int64(2), 'Room_Type 4': np.int64(3), 'Room_Type 5': np.int64(4), 'Room_Type 6': np.int64(5), 'Room_Type 7': np.int64(6)} 
+2025-04-24 20:54:34,759 - INFO - market_segment_type : {'Aviation': np.int64(0), 'Complementary': np.int64(1), 'Corporate': np.int64(2), 'Offline': np.int64(3), 'Online': np.int64(4)} 
+2025-04-24 20:54:34,759 - INFO - booking_status : {'Canceled': np.int64(0), 'Not_Canceled': np.int64(1)} 
+2025-04-24 20:54:34,759 - INFO - repeated_guest : {np.int64(0): np.int64(0), np.int64(1): np.int64(1)} 
+2025-04-24 20:54:34,759 - INFO - Skewness Handling 
+2025-04-24 20:54:34,759 - INFO - Starting preprocessing data 
+2025-04-24 20:54:34,759 - INFO - Dropping the columns 
+2025-04-24 20:54:34,766 - INFO - Applying Label Encoding 
+2025-04-24 20:54:34,766 - INFO - Label Mappings are: 
+2025-04-24 20:54:34,766 - INFO - type_of_meal_plan : {'Meal Plan 1': np.int64(0), 'Meal Plan 2': np.int64(1), 'Meal Plan 3': np.int64(2), 'Not Selected': np.int64(3)} 
+2025-04-24 20:54:34,766 - INFO - required_car_parking_space : {np.int64(0): np.int64(0), np.int64(1): np.int64(1)} 
+2025-04-24 20:54:34,766 - INFO - room_type_reserved : {'Room_Type 1': np.int64(0), 'Room_Type 2': np.int64(1), 'Room_Type 3': np.int64(2), 'Room_Type 4': np.int64(3), 'Room_Type 5': np.int64(4), 'Room_Type 6': np.int64(5), 'Room_Type 7': np.int64(6)} 
+2025-04-24 20:54:34,766 - INFO - market_segment_type : {'Aviation': np.int64(0), 'Complementary': np.int64(1), 'Corporate': np.int64(2), 'Offline': np.int64(3), 'Online': np.int64(4)} 
+2025-04-24 20:54:34,766 - INFO - booking_status : {'Canceled': np.int64(0), 'Not_Canceled': np.int64(1)} 
+2025-04-24 20:54:34,766 - INFO - repeated_guest : {np.int64(0): np.int64(0), np.int64(1): np.int64(1)} 
+2025-04-24 20:54:34,766 - INFO - Skewness Handling 
+2025-04-24 20:54:34,766 - INFO - Handling imbalanced data 
+2025-04-24 20:54:35,002 - INFO - Data balanced succesfully 
+2025-04-24 20:54:35,002 - INFO - Handling imbalanced data 
+2025-04-24 20:54:35,016 - INFO - Data balanced succesfully 
+2025-04-24 20:54:35,016 - INFO - Starting Feature Selection 
+2025-04-24 20:54:38,577 - INFO - Features selected: ['lead_time' 'no_of_special_requests' 'avg_price_per_room' 'arrival_month'
+ 'arrival_date' 'market_segment_type' 'no_of_week_nights'
+ 'no_of_weekend_nights' 'room_type_reserved' 'type_of_meal_plan'] 
+2025-04-24 20:54:38,577 - INFO - Feature selection completed sucessfully 
+2025-04-24 20:54:38,577 - INFO - Saving processed data 
+2025-04-24 20:54:38,704 - INFO - Data saved sucessfully to C:\Users\dgarc\Documents\Projects\Hotel-Reservation\artifacts\processed\processed_train.csv 
+2025-04-24 20:54:38,704 - INFO - Saving processed data 
+2025-04-24 20:54:38,718 - INFO - Data saved sucessfully to C:\Users\dgarc\Documents\Projects\Hotel-Reservation\artifacts\processed\processed_test.csv 
+2025-04-24 20:54:38,718 - INFO - Data processing completed sucessfully  

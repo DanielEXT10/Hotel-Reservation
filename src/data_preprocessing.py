@@ -10,7 +10,7 @@ from sklearn.preprocessing import LabelEncoder
 from imblearn.over_sampling import SMOTE
 import sys
 
-logger = get_logger(__annotations__)
+logger = get_logger(__name__)
 
 class DataProcessor:
 

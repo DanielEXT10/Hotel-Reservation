@@ -6,3 +6,6 @@ pyyaml
 imbalanced-learn
 lightgbm
 mlflow
+flask
+dash
+plotly

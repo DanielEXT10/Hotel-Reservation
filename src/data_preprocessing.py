@@ -117,7 +117,7 @@ class DataProcessor:
     def save_data(self,df, file_path):
         try:
             logger.info("Saving processed data")
-            df.to_csv(file_path)
+            df.to_csv(file_path, index = False)
 
             logger.info(f"Data saved sucessfully to {file_path}")
         

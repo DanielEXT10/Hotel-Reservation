@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hotel Reservation Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f6fa;
+    }
+    .navbar {
+      background-color: #007BFF;
+      color: white;
+      padding: 15px 30px;
+      font-size: 20px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+    .container {
+      display: flex;
+    }
+    .sidebar {
+      width: 220px;
+      background: #2f3542;
+      color: white;
+      height: 100vh;
+      padding-top: 30px;
+      position: fixed;
+    }
+    .sidebar a {
+      display: block;
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    .sidebar a:hover {
+      background: #57606f;
+    }
+    .main-content {
+      margin-left: 220px;
+      padding: 30px;
+      width: calc(100% - 220px);
+    }
+    .cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+    .card {
+      background: white;
+      flex: 1;
+      min-width: 220px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #333;
+      font-size: 18px;
+    }
+    .card p {
+      font-size: 24px;
+      margin: 10px 0 0;
+      color: #007BFF;
+    }
+    .chart-container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    canvas {
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<div class="navbar">
+  Hotel Reservation Dashboard
+</div>
+
+<div class="container">
+  <div class="sidebar">
+    <a href="#">🏠 Home</a>
+    <a href="#">🔍 Predictions</a>
+    <a href="#">📈 Reports</a>
+    <a href="#">⚙️ Settings</a>
+  </div>
+
+  <div class="main-content">
+    <h1>Welcome back!</h1>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Today's Reservations</h3>
+        <p>125</p>
+      </div>
+      <div class="card">
+        <h3>Prediction Accuracy</h3>
+        <p>92%</p>
+      </div>
+      <div class="card">
+        <h3>Monthly Revenue</h3>
+        <p>$82,400</p>
+      </div>
+      <div class="card">
+        <h3>Special Requests</h3>
+        <p>47</p>
+      </div>
+    </div>
+
+    <div class="chart-container">
+      <h3>Reservations per Month</h3>
+      <canvas id="reservationsChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+      <h3>Cancellation Rate</h3>
+      <canvas id="cancellationChart"></canvas>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // Chart 1: Reservations per Month
+  const ctx1 = document.getElementById('reservationsChart').getContext('2d');
+  const reservationsChart = new Chart(ctx1, {
+    type: 'bar',
+    data: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+      datasets: [{
+        label: 'Reservations',
+        data: [120, 150, 180, 200, 170, 190, 250, 300, 280],
+        backgroundColor: '#007BFF'
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  // Chart 2: Cancellation Rate
+  const ctx2 = document.getElementById('cancellationChart').getContext('2d');
+  const cancellationChart = new Chart(ctx2, {
+    type: 'line',
+    data: {
+      labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+      datasets: [{
+        label: 'Cancellations',
+        data: [5, 10, 6, 4],
+        fill: false,
+        borderColor: '#FF6B6B',
+        tension: 0.4
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

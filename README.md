@@ -10,7 +10,7 @@ This end-to-end machine learning project focuses on predicting hotel reservation
 
 The dataset contains information about hotel reservations, customer behavior, and booking attributes. It includes both categorical and numerical features. The **target variable** is:
 
-> `is_canceled`: A binary classification label (1 if canceled, 0 otherwise)
+> `booking_status`: A binary classification label (0 if canceled, 1 otherwise)
 
 ### 🔢 Feature Categories
 
@@ -41,13 +41,14 @@ The dataset contains information about hotel reservations, customer behavior, an
 
 This section includes an in-depth analysis of booking trends, cancellation patterns, and feature correlations. Insights are derived from:
 - Histograms of feature distributions
+    ![Average Price Room distribution](images\AvgPriceRoom.png)
 - Correlation matrix heatmaps
-- Time-series cancellation patterns
+    ![Correlation Heatmap](images\Heatmap.png)
+
+- Booking Status vs Categorical Features
+    ![Booking Status](images\CategoricalvsTarget.png)
+
 - Average prices by segment
-
-📎 _Visualizations will be added here soon._  
-🖼️ ![EDA Placeholder](./eda_placeholder.png)
-
 ---
 
 ## 🤖 Model Comparison
@@ -67,8 +68,10 @@ The following models were trained and evaluated using Accuracy, Precision, Recal
 | AdaBoost                 | 0.821927  | 0.814780  | 0.836608  | 0.825547  |
 | LGBM                     | 0.866732  | 0.851494  | 0.890879  | 0.870742  |
 
-📌 _**Random Forest** achieved the best performance with an F1-score of **0.892508**._
+📌 _**Random Forest** achieved the best performance with an F1-score of **0.892508** size: 160Mb._
+📌 _**LGBM** achieved the best performance over size with an F1-score of **0.870742** size: 3.62Mb_
 
+- 🧪 **Hyperparameter tuning** with GridSearchCV or Optuna
 ---
 
 ## ⚙️ MLOps Implementation
@@ -76,11 +79,14 @@ The following models were trained and evaluated using Accuracy, Precision, Recal
 This project follows core MLOps practices:
 
 - ✅ **Version Control**: Git is used for tracking code and data pipeline versions.
-- ✅ **CI/CD Pipelines**: Automated pipelines handle data preprocessing, model training, and testing.
+- ✅ **CI/CD Pipelines**: Automated pipelines handle data extraction, preprocessing, model training, and testing.
 - ✅ **Monitoring & Logging**: Logs and metrics are tracked to monitor model performance in production.
-- ✅ **Containerization**: The entire pipeline is containerized using **Docker** for reliable deployment.
-- ✅ **API Deployment**: A lightweight **Flask API** is used to serve predictions, deployed via **AWS** or **Heroku**.
+- ✅ **MLFlow Experimentation tracking**: Model experimentation is stored and track using MLFlow.
+    ![Experiment Tracking](images\Experiments.png)
+- ✅ **App Deployment**: A lightweight **Flask App** is used to serve predictions, deployed via **GCP**.
 
+- ✅ **Plotly-Dash app**: used for both serve predictions and EDA consults, deployed via **GCP**.
+    ![Plotly-Dash App](images\Dash_app.png)
 ---
 
 ## 🗂️ Project Structure
@@ -116,10 +122,9 @@ hotel-reservation-cancellation/
 
 ## 🚀 Future Improvements
 
-- 🧪 **Hyperparameter tuning** with GridSearchCV or Optuna
+
 - 🛠️ **Advanced feature engineering** for time-based trends
 - 📈 **Model explainability** with SHAP/LIME
-- 🌐 **Deploy as a web dashboard** using Streamlit or Dash
 - ⏱️ **Real-time monitoring** with Prometheus + Grafana
 
 ---

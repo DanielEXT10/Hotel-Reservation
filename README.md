@@ -41,12 +41,12 @@ The dataset contains information about hotel reservations, customer behavior, an
 
 This section includes an in-depth analysis of booking trends, cancellation patterns, and feature correlations. Insights are derived from:
 - Histograms of feature distributions
-    ![Average Price Room distribution](images\AvgPriceRoom.png)
+    ![Average Price Room distribution](images/AvgPriceRoom.png)
 - Correlation matrix heatmaps
-    ![Correlation Heatmap](images\Heatmap.png)
+    ![Correlation Heatmap](images/Heatmap.png)
 
 - Booking Status vs Categorical Features
-    ![Booking Status](images\CategoricalvsTarget.png)
+    ![Booking Status](images/CategoricalvsTarget.png)
 
 - Average prices by segment
 ---
@@ -82,11 +82,11 @@ This project follows core MLOps practices:
 - ✅ **CI/CD Pipelines**: Automated pipelines handle data extraction, preprocessing, model training, and testing.
 - ✅ **Monitoring & Logging**: Logs and metrics are tracked to monitor model performance in production.
 - ✅ **MLFlow Experimentation tracking**: Model experimentation is stored and track using MLFlow.
-    ![Experiment Tracking](images\Experiments.png)
+    ![Experiment Tracking](images/Experiments.png)
 - ✅ **App Deployment**: A lightweight **Flask App** is used to serve predictions, deployed via **GCP**.
 
 - ✅ **Plotly-Dash app**: used for both serve predictions and EDA consults, deployed via **GCP**.
-    ![Plotly-Dash App](images\Dash_app.png)
+    ![Plotly-Dash App](images/Dash_app.png)
 ---
 
 ## 🗂️ Project Structure

@@ -1,7 +1,7 @@
 FROM python:slim
 
-ENV PYTHONDONTWRITEBYTECODE = 1 \
-    PYTHONUNBUFFERED = 1
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
@@ -15,7 +15,7 @@ COPY . .
 
 RUN pip install --no-cache-dir -e .
 
-RUN python pipeline/training_pipeline
+RUN python pipeline/training_pipeline.py
 
 EXPOSE 5000
 

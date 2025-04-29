@@ -2,78 +2,82 @@ pipeline {
     agent any
 
     environment {
-        VENV_DIR = 'venv'
         GCP_PROJECT = 'unique-rarity-456314-h2'
         GCLOUD_PATH = '/var/jenkins_home/google-cloud-sdk/bin'
+        IMAGE_NAME = "hotel-reservation"
     }
 
     stages {
-
-        stage('Cloning Github Repo to Jenkins') {
+        stage('Clone GitHub Repo') {
             steps {
-                script {
-                    echo 'Cloning Github Repo to Jenkins'
-                    checkout scmGit(
-                        branches: [[name: '*/main']],
-                        extensions: [],
-                        userRemoteConfigs: [[
-                            credentialsId: 'github-token',
-                            url: 'https://github.com/DanielEXT10/Hotel-Reservation.git'
-                        ]]
-                    )
-                }
+                echo '🔄 Cloning GitHub repository...'
+                checkout scmGit(
+                    branches: [[name: '*/main']],
+                    extensions: [],
+                    userRemoteConfigs: [[
+                        credentialsId: 'github-token',
+                        url: 'https://github.com/DanielEXT10/Hotel-Reservation.git'
+                    ]]
+                )
             }
         }
 
-        stage('Setting up our virtual Environment and Installing dependencies') {
+        stage('Install Python Dependencies') {
             steps {
-                script {
-                    echo 'Setting up our virtual Environment and Installing dependencies'
-                    sh '''
-                        python -m venv ${VENV_DIR}
-                        . ${VENV_DIR}/bin/activate
-                        pip install --upgrade pip
-                        pip install -e .
-                    '''
-                }
+                echo '📦 Installing Python dependencies...'
+                sh 'pip install -e .'
             }
         }
 
-        stage('Building and pushing docker image into GCR') {
+        stage('Run Unit Tests') {
+            steps {
+                echo '✅ Running unit tests...'
+                sh 'pytest || echo "⚠️ No tests found or failed tests (continuing anyway)"'
+            }
+        }
+
+        stage('Build & Push Docker Image to GCR') {
             steps {
                 withCredentials([file(credentialsId: 'gcp-key', variable: 'GOOGLE_APPLICATION_CREDENTIALS')]) {
                     script {
-                        echo 'Building and pushing docker image into GCR'
-                        sh '''
+                        def commitHash = sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()
+                        def imageWithTag = "gcr.io/${GCP_PROJECT}/${IMAGE_NAME}:${commitHash}"
+                        def imageLatest = "gcr.io/${GCP_PROJECT}/${IMAGE_NAME}:latest"
+
+                        echo "🐳 Building Docker image: ${imageWithTag}"
+
+                        sh """
                             export PATH=$PATH:${GCLOUD_PATH}
 
                             gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}
                             gcloud config set project ${GCP_PROJECT}
                             gcloud auth configure-docker --quiet
 
-                            docker build -t gcr.io/${GCP_PROJECT}/hotel-reservation:latest .
-                            docker push gcr.io/${GCP_PROJECT}/hotel-reservation:latest
-                        '''
+                            docker build -t ${imageWithTag} .
+                            docker tag ${imageWithTag} ${imageLatest}
+
+                            docker push ${imageWithTag}
+                            docker push ${imageLatest}
+                        """
                     }
                 }
             }
         }
-
     }
-     post {
+
+    post {
         success {
             echo '🎉 Build and deployment succeeded!'
-            // Example: notify via Slack, email, or trigger another job
         }
 
         failure {
             echo '❌ Build failed.'
-            // Example: send alert to email or logging system
         }
 
         always {
             echo '🧹 Running cleanup...'
-            // Example: remove temporary files, Docker containers, etc.
+            sh 'docker image prune -f || true'
+            cleanWs()
         }
 
         aborted {

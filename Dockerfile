@@ -6,20 +6,26 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     PYTHONPATH=/app
 
+# Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libgomp1 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-
-COPY . .
-
+# Install Python dependencies
+COPY setup.py requirements.txt ./
 RUN pip install --no-cache-dir -e .
 
-RUN python pipeline/training_pipeline.py
+# Copy only necessary source code
+COPY app.py application.py ./
+COPY src/ src/
+COPY pipeline/ pipeline/
+COPY config/ config/
+COPY utils/ utils/
+COPY templates/ templates/
+COPY static/ static/
 
 EXPOSE 5000
 
+# Run the web app only (not training pipeline)
 CMD ["python", "app.py"]
-
-

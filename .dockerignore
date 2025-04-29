@@ -1,12 +1,47 @@
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.db
-*.sqlite3
-*.log
-.env
+
+# ────────────────────────────────
+# Prevent unnecessary/big files from entering the Docker image
+# ────────────────────────────────
+
+# Version control
 .git
-.dockerignore
 .gitignore
-.ipynb_checkpoints
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+
+# Jupyter & notebooks
+notebook/
+*.ipynb
+
+# Logs
+*.log
+logs/
+
+# Environment & local builds
+venv/
+.env
+.env.*
+
+# Editor config
+.vscode/
+*.swp
+*.bak
+
+# Egg and dist files
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Docker/Jenkins extras
+Dockerfile
+Jenkinsfile
+README.md
+Models Performance.png
+
+# MLflow artifacts (if any)
+mlruns/

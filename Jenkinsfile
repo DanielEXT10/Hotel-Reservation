@@ -25,7 +25,7 @@ pipeline {
         stage('Install Python Dependencies') {
             steps {
                 echo '📦 Installing Python dependencies...'
-                sh 'pip install -e .'
+                sh 'pip install -e . --break-system-package'
             }
         }
 

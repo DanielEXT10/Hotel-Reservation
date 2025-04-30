@@ -25,7 +25,7 @@ COPY utils/ utils/
 COPY templates/ templates/
 COPY static/ static/
 
-EXPOSE 5000
+EXPOSE 8080
 
 # Run the web app only (not training pipeline)
 CMD ["python", "app.py"]

@@ -25,6 +25,7 @@ COPY utils/ utils/
 COPY templates/ templates/
 COPY static/ static/
 COPY artifacts/ artifacts/
+COPY assets/ assets/
 
 EXPOSE 8080
 

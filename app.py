@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 import joblib
 import plotly.express as px
+import os
 
 # Paths
 MODEL_PATH = "artifacts/models/lgbm_model.pkl"
@@ -181,4 +182,5 @@ def update_eda_graphs(n_clicks):
     return fig1, fig2, fig3, fig4
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host="0.0.0.0.", port = port)

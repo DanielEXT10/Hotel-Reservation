@@ -63,6 +63,34 @@ pipeline {
                 }
             }
         }
+        
+        stage('Deploy to Google Cloud Run'){
+           steps {withCredentials([file(credentialsId: 'gcp-key', variable: 'GOOGLE_APPLICATION_CREDENTIALS')]){
+                script{
+                    def commitHash = sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()
+                    def imageWithTag = "gcr.io/${GCP_PROJECT}/${IMAGE_NAME}:${commitHash}"
+
+                    echo "Deploying ${imageWithTag} to Cloud Run"
+
+                    sh """
+                        export PATH=$PATH:${GCLOUD_PATH}
+
+                        gcloud auth activate-service-account --key-file=\$GOOGLE_APPLICATION_CREDENTIALS
+                        gcloud config set project ${GCP_PROJECT}
+
+                        gcloud run deploy hotel-reservation \
+                            --image=${imageWithTag} \
+                            --platform=managed \
+                            --region=us-central1 \
+                            --allow-unauthenticated \
+                            --quiet
+
+        
+
+                    """
+                }
+            }
+        }}
     }
 
     post {
